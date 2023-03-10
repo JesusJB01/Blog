@@ -5,7 +5,7 @@ import OurTeam from "@/components/home/OurTeam";
 import TrendingPost from "@/components/home/TrendingPost";
 import Newsletter from "@/components/home/Newslestter";
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <>
       <Layout>
@@ -39,10 +39,19 @@ export default function Home() {
         <Main />
 
         <LayoutLogos />
-        <TrendingPost/>
+        <TrendingPost />
         <OurTeam />
-        <Newsletter/>
+
+        <Newsletter />
       </Layout>
     </>
   );
 }
+/* export async function getServerSideProps() {
+  const res = await fetch(
+    "http://localhost:1337/api/teams?populate=*&pagination[start]=0&pagination[limit]=4"
+  );
+  const data = await res.json();
+
+  return { props: data };
+} */
