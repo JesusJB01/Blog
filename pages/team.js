@@ -36,7 +36,7 @@ const team = ({team}) => {
 };
 
 export async function getStaticProps() {
-    const res = await fetch('http://localhost:1337/api/teams?populate=*&sort[0]=id%3Aasc&sort[1]=id%3Adesc')
+    const res = await fetch('https://backend-strapi-c984.onrender.com/api/teams?populate=*&sort[0]=id%3Aasc&sort[1]=id%3Adesc')
     const team = await res.json()
   
     return {
